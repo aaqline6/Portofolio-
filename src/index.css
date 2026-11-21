@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+:root {
+  --bg-page: #F6F3EE;
+  --bg-sand: #D8CFC6;
+  --bg-blush: #EFE5E1;
+  --bg-note: #E8E1D9;
+  --bg-card: #FFFFFF;
+  --ink: #23201E;
+  --ink-soft: rgba(35, 32, 30, 0.74);
+  --accent: #4F6D8A;
+  --border-thin: rgba(35, 32, 30, 0.14);
+}
+
+@layer base {
+  html {
+    background-color: var(--bg-page);
+    color: var(--ink);
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--bg-page);
+    color: var(--ink);
+    overflow-x: hidden;
+    margin: 0;
+  }
+}
+
+.font-display {
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+  line-height: 0.96;
+  letter-spacing: 0.01em;
+}
+
+.font-script {
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.bento-border-x {
+  border-left: 1.5px solid var(--border-thin);
+  border-right: 1.5px solid var(--border-thin);
+}
+
+.bento-border-b {
+  border-bottom: 1.5px solid var(--border-thin);
+}
+
+.bento-border-r {
+  border-right: 1.5px solid var(--border-thin);
+}
+
+@media (max-width: 1023px) {
+  .bento-border-r {
+    border-right: none;
+    border-bottom: 1.5px solid var(--border-thin);
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Subtle tactile paper grain overlay */
+.paper-grain {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.032;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
